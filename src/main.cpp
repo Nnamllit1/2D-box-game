@@ -1,5 +1,9 @@
 #include <iostream>
 #include <SDL.h>
+#include "render/grid.hpp"
+
+int SCREEN_WIDTH = 640;
+int SCREEN_HEIGHT = 480;
 
 bool running = true;
 
@@ -18,7 +22,7 @@ int main(int argc, char* argv[])
     SDL_Init(SDL_INIT_EVERYTHING);
 
     SDL_Window* window =
-        SDL_CreateWindow("Hello, world!", 100, 100, 640, 480, SDL_WINDOW_SHOWN);
+        SDL_CreateWindow("Hello, world!", 100, 100, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 
     SDL_Renderer* renderer =
         SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
@@ -26,12 +30,12 @@ int main(int argc, char* argv[])
     SDL_Event event;
     while (running)
     {
+        render_grid(renderer, 10, SCREEN_WIDTH, SCREEN_HEIGHT);
+
         while (SDL_PollEvent(&event))
         {
             handle_events(&event);
         }
-        SDL_RenderClear(renderer);
-        SDL_RenderPresent(renderer);
     }
 
     SDL_DestroyRenderer(renderer);
