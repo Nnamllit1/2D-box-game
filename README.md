@@ -1,6 +1,6 @@
 # 2D box game
 
-A simple 2D box game (it atleasts wants to be a game) written in C++.
+A simple 2D box game (it at least wants to be a game) written in C++.
 
 ## Requirements
 
