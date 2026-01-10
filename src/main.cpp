@@ -1,6 +1,5 @@
 #include <iostream>
 #include <SDL.h>
-#include "render/grid.hpp"
 
 int SCREEN_WIDTH = 640;
 int SCREEN_HEIGHT = 480;
@@ -30,8 +29,6 @@ int main(int argc, char* argv[])
     SDL_Event event;
     while (running)
     {
-        render_grid(renderer, 10, SCREEN_WIDTH, SCREEN_HEIGHT);
-
         while (SDL_PollEvent(&event))
         {
             handle_events(&event);
