@@ -1,4 +1,4 @@
-# 2D and box game
+# 2D sand box game
 
 A simple 2D sand box game (it at least wants to be a game) written in C++. It is a learning project for me to learn more about C++ and SDL2.
 
